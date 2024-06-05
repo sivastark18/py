@@ -1,0 +1,30 @@
+# Get the dimensions of the matrices from the user
+m = int(input("Enter the number of rows for the first matrix: "))
+n = int(input("Enter the number of columns for the first matrix (and the number of rows for the second matrix): "))
+p = int(input("Enter the number of columns for the second matrix: "))
+
+# Initialize the matrices with user input
+matrix1 = []
+for i in range(m):
+    row = list(map(int, input(f"Enter row {i+1} of the first matrix: ").split()))
+    if len(row) != n:
+        raise ValueError("Invalid number of columns")
+    matrix1.append(row)
+
+matrix2 = []
+for i in range(n):
+    row = list(map(int, input(f"Enter row {i+1} of the second matrix: ").split()))
+    if len(row) != p:
+        raise ValueError("Invalid number of columns")
+    matrix2.append(row)
+
+# Perform matrix multiplication
+result = [[0 for _ in range(p)] for _ in range(m)]
+for i in range(m):
+    for j in range(p):
+        for k in range(n):
+            result[i][j] += matrix1[i][k] * matrix2[k][j]
+
+# Print the result
+for row in result:
+    print(row)

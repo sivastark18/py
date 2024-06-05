@@ -1,0 +1,9 @@
+N1 = int(input("Enter first number: "))
+N2 = int(input("Enter second number: "))
+
+
+while N2 != 0:
+    N1, N2 = N2, N1 % N2
+
+
+print('GCD: {}'.format(N1))

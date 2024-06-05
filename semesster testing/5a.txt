@@ -1,0 +1,14 @@
+ n=int(input("Enter the elements in an array"))
+ a=[]
+ for i in range(0,n,1):
+  e=int(input())
+  a.append(e)
+ s=int(input("Enter the search element"))
+ for i in range(0,n,1):
+  if s==a[i]:
+    flag=1
+    break
+ if flag==1:
+  print("element is found in {}".format(i+1))
+ else:
+  print("Elelment is not found")

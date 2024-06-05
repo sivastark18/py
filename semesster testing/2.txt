@@ -1,0 +1,9 @@
+n = int(input("Enter the number: "))
+trail = 10
+approx = 0.5 * n
+
+for i in range(trail):
+    b = 0.5 * (approx + n / approx)
+    approx = b
+
+print("The square root of", n, "is approximately", approx)
